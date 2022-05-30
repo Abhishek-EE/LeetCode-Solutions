@@ -3,20 +3,14 @@ class Solution:
         
         start = 0
         end = len(nums) - 1
-        mid = end - (end - start)//2
-        while(end-start>1):
+        while(end-start>=0):
+            mid = end - (end-start)//2
             if(nums[mid]==target):
                 return mid
             elif(nums[mid]>target):
-                end = mid
+                end = mid - 1
             else:
-                start = mid
-            mid = end - (end-start)//2
-        if(nums[start] == target):
-            return start
-        if(nums[end] == target):
-            return end
-
+                start = mid + 1
         
         return -1
         
