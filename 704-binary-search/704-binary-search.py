@@ -5,9 +5,9 @@ class Solution:
             mid = start + (end-start)//2
             if nums[mid]==target:
                 return mid
-            elif nums[mid]>target:
-                end = mid - 1
-            else:
+            elif nums[mid]<target:
                 start = mid + 1
+            else:
+                end = mid - 1
         return -1
         
