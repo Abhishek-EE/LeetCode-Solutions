@@ -16,7 +16,7 @@ class Solution:
             """
             check if mid value is pivot
             """
-            if(nums[mid-1] > nums[mid] or nums[mid] > nums[mid] > nums[mid+1]):
+            if(nums[mid-1] > nums[mid]):
                 pivot_index = mid
                 break
             """
