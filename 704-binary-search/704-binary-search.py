@@ -14,10 +14,9 @@ class Solution:
             mid = end - (end-start)//2
         if(nums[start] == target):
             return start
-        if(nums[mid] == target):
-            return mid
         if(nums[end] == target):
-            return mid
+            return end
+
         
         return -1
         
