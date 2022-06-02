@@ -13,6 +13,7 @@ class Solution:
             return 1
         a0 = 0
         a1 = 1
+        answer = 0
         for i in range(2,n+1):
             answer = a0 + a1
             a0 = a1
