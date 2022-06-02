@@ -7,13 +7,9 @@ class Solution:
         reutrn 
         you could do it recursively but let me first do it non recursively
         """
-        if n == 0:
-            return 0
-        if n == 1:
-            return 1
         a0 = 0
         a1 = 1
-        answer = 0
+        answer = n
         for i in range(2,n+1):
             answer = a0 + a1
             a0 = a1
