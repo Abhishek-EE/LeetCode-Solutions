@@ -7,10 +7,16 @@ class Solution:
         reutrn 
         you could do it recursively but let me first do it non recursively
         """
-        A = [0,1]
+        if n == 0:
+            return 0
+        if n == 1:
+            return 1
+        a0 = 0
+        a1 = 1
         for i in range(2,n+1):
-            A.append(A[i-1] + A[i-2])
-        print(A)
-        return A[n]
+            answer = a0 + a1
+            a0 = a1
+            a1 = answer
+        return answer
         
         
