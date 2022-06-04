@@ -4,9 +4,6 @@ class Solution:
         end = len(nums) - 1
         while end-start>=0:
             mid = start + (end-start)//2
-            print("start: ",start)
-            print("Mid: ", mid)
-            print("End: ",end)
             if nums[mid] == target:
                 return mid
             elif nums[mid] > target:
