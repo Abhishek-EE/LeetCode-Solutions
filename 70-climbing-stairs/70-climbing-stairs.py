@@ -1,16 +1,18 @@
 class Solution:
     def climbStairs(self, n: int) -> int:
         """
-        So how can I reach n steps? 
-        climbStairs(n) = climbStairs(n-1) + climbStairs(n-2)
-        so basically number of ways you can reach n-1 + number of ways you can reach n-2
+        S(n) = S(n-1) + S(n-2)
         """
-        if n == 1 or n==2:
+        if n<=2:
             return n
-        a1 = 1
-        a2 = 2
+        m1 = 1
+        m2 = 2
+        answer = 0
         for i in range(2,n):
-            answer = a1 + a2
-            a1 = a2
-            a2 = answer
+            answer = m2 + m1
+            m1 = m2
+            m2 = answer
         return answer
+        
+            
+        
