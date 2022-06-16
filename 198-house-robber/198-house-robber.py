@@ -1,15 +1,21 @@
 class Solution:
     def rob(self, nums: List[int]) -> int:
-        """The way I feel like we can solve it is you can either rob even houses or odd houses
-        see which one has the max, just keep """
-        mem = [-1 for i in range(len(nums)+1)]
-        if(len(nums)<3):
+        if len(nums) <=2:
             return max(nums)
-        mi2 = 0
-        mi1 = nums[len(nums)-1]
-        for i in reversed(range(len(nums)-1)):
-            mi = max(mi1,mi2+nums[i])
-            mi2 = mi1
-            mi1 = mi
-        return mi
+        mem = collections.defaultdict(int)
+        def robFrom(n):
+            if n in mem:
+                return mem[n]
+            if n>len(nums)-1:
+                return 0
+            if n == len(nums)-1:
+                mem[n] = nums[n]
+                return mem[n]
+            if n == len(nums)-2:
+                mem[n] = max(nums[n],nums[n+1])
+            ans = max(robFrom(n+1),robFrom(n+2)+nums[n])
+            mem[n] = ans
+            return mem[n]
+        answer = robFrom(0)
             
+        return answer
