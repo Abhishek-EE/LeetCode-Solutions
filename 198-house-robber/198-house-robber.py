@@ -2,20 +2,13 @@ class Solution:
     def rob(self, nums: List[int]) -> int:
         if len(nums) <=2:
             return max(nums)
-        mem = collections.defaultdict(int)
-        def robFrom(n):
-            if n in mem:
-                return mem[n]
-            if n>len(nums)-1:
-                return 0
-            if n == len(nums)-1:
-                mem[n] = nums[n]
-                return mem[n]
-            if n == len(nums)-2:
-                mem[n] = max(nums[n],nums[n+1])
-            ans = max(robFrom(n+1),robFrom(n+2)+nums[n])
-            mem[n] = ans
-            return mem[n]
-        answer = robFrom(0)
+        n = len(nums)-1
+        elem_plus2 = nums[n]
+        elem_plus1 = max(nums[n],nums[n-1])
+        answer = 0
+        for i in range(n-2,-1,-1):
+            answer = max(elem_plus1,elem_plus2+nums[i])
+            elem_plus2 = elem_plus1
+            elem_plus1 = answer
             
         return answer
