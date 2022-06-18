@@ -9,13 +9,16 @@ class Solution:
             return max(nums)
         return max(nums[0]+self.rob_non_circular(nums[2:len(nums)-1]),self.rob_non_circular(nums[1:]))
     def rob_non_circular(self,nums: List[int])->int:
-        if len(nums) < 3:
+        if len(nums) <=2:
             return max(nums)
-        mi2 = 0
-        mi1 = nums[len(nums)-1]
-        for i in reversed(range(len(nums)-1)):
-            mi = max(mi2+nums[i],mi1)
-            mi2 = mi1
-            mi1 = mi
-        return mi
+        n = len(nums)-1
+        elem_plus2 = nums[n]
+        elem_plus1 = max(nums[n],nums[n-1])
+        answer = 0
+        for i in range(n-2,-1,-1):
+            answer = max(elem_plus1,elem_plus2+nums[i])
+            elem_plus2 = elem_plus1
+            elem_plus1 = answer
+            
+        return answer
         
