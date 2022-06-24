@@ -8,9 +8,7 @@ class Solution:
             for j in range(i,i+2):
                 if j > len(s) - 1:
                     continue
-                print("question: ",i,j)
                 curr_i,curr_j = self.expandAroundCenter(i,j,s)
-                print("answer: ",curr_i,curr_j)
                 if curr_j - curr_i + 1 > e_j - s_i + 1:
                     s_i = curr_i
                     e_j = curr_j
