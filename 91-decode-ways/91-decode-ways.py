@@ -1,12 +1,10 @@
 class Solution:
     def numDecodings(self, s: str) -> int:
         mem = collections.defaultdict(int)
-        print(s)
         def decoding(str1):
             """
             if the first element is greater
             """
-            print(mem)
             if str1 in mem:
                 return mem[str1]
             if len(str1) == 0:
