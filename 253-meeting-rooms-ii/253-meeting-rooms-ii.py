@@ -1,7 +1,6 @@
 class Solution:
     def minMeetingRooms(self, intervals: List[List[int]]) -> int:
         intervals.sort()
-        print(intervals)
         rooms_available = []
         room_not_available = True
         for i in range(len(intervals)):
