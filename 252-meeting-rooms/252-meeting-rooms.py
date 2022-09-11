@@ -5,8 +5,8 @@ class Solution:
         easiest approach is to sort all the meetings by start time and if end time of any meeting is greater than start time of any other meeting then it can't be attended
         """
         intervals.sort()
-        for i in range(len(intervals)-1):
-            if intervals[i][1] > intervals[i+1][0]:
+        for i in range(1,len(intervals)):
+            if intervals[i-1][1] > intervals[i][0]:
                 return False
         return True
             
