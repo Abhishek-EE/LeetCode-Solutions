@@ -4,7 +4,6 @@ class Solution:
         rooms_available = [intervals[0][1]]
         heapify(rooms_available)
         num_of_rooms = 1
-        # room_not_available = True
         for i in range(1,len(intervals)):
             earliest_available_room = rooms_available[0]
             if intervals[i][0] >= earliest_available_room:
