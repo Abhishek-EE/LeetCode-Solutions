@@ -7,10 +7,7 @@ class Solution:
         s = dict()
         for i in range(len(nums)):
             if nums[i] in s:
-                if abs(i-s[nums[i]]) <= k:
-                    answer = True
-                    break
+                answer =  abs(i-s[nums[i]]) <= k or answer
             s[nums[i]] = i
-        print(s)
         return answer
         
