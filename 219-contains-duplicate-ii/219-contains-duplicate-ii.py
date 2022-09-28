@@ -7,7 +7,6 @@ class Solution:
         s = dict()
         for i in range(len(nums)):
             if nums[i] in s:
-                print("reached here: ", nums[i],i)
                 if abs(i-s[nums[i]]) <= k:
                     answer = True
                     break
