@@ -5,9 +5,6 @@ class Solution:
         and if ever you encounter a repeat return the value then and there
         Otherwise run the entire loop
         """
-        s = set(nums)
-        if len(s) == len(nums):
-            return False
-        else:
-            return True
+        return len(set(nums)) != len(nums)
+        
         
